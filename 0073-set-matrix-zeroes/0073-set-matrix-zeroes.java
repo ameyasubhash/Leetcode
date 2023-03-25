@@ -9,9 +9,9 @@ class Solution {
                          matrix[k][j]=-1234;
                     }
                     for(int l=0;l<matrix[0].length;l++){
-                        if(matrix[i][l]==0) 
-                            matrix[i][l]=0;
-                        else
+                        if(matrix[i][l]!=0) 
+                        //     matrix[i][l]=0;
+                        // else
                             matrix[i][l]=-1234;    
                     }
                 }
