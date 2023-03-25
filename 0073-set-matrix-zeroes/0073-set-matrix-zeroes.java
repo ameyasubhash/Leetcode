@@ -5,9 +5,7 @@ class Solution {
             for(int j=0;j<matrix[0].length;j++){
                 if(matrix[i][j]==0){
                     for(int k=0;k<matrix.length;k++){
-                        if(matrix[k][j]==0) 
-                            matrix[k][j]=0;
-                        else
+                        if(matrix[k][j]!=0) 
                          matrix[k][j]=-1234;
                     }
                     for(int l=0;l<matrix[0].length;l++){
