@@ -18,20 +18,36 @@ class Solution {
      //    return ele;
         
         // intermediate
-        Arrays.sort(a);
-        int curmax=0, max=0, num=a[0];
-        for(int i=0; i<a.length-1; i++){
-            if(a[i]==a[i+1])
-                curmax++;
-            else{
-                curmax=0;
-            }
-            if(max<curmax){
-                    num=a[i];
-                    max=curmax;
+//         Arrays.sort(a);
+//         int curmax=0, max=0, num=a[0];
+//         for(int i=0; i<a.length-1; i++){
+//             if(a[i]==a[i+1])
+//                 curmax++;
+//             else{
+//                 curmax=0;
+//             }
+//             if(max<curmax){
+//                     num=a[i];
+//                     max=curmax;
                     
-                }
+//                 }
+//         }
+//         return num;
+        
+        // optimised
+        int ansIndex = 0;
+        int count = 1;
+        for(int i=1; i<a.length; i++){
+            if(a[i]==a[ansIndex])
+                count++;
+            else
+                count--;
+            if(count==0){
+                ansIndex=i;
+                count=1;
+            }
         }
-        return num;
+        return a[ansIndex];
+    
     }
 }
