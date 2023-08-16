@@ -1,30 +1,32 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
-       // brute force using space
+       // brute force using space and without space
         int l=matrix.length, b=matrix[0].length;
         
-        int temp[][] = new int [l][b];
-        for(int i =0;i<l;i++){
-            for(int j=0;j<b;j++){
-                temp[i][j]=1;
-            }
-		 }
+		 // int temp[][] = new int [l][b];
+		 // for(int i =0;i<l;i++){
+		 // for(int j=0;j<b;j++){
+		 // temp[i][j]=1;
+		 // }
+		 // }
         
         for(int i=0; i<l; i++){
             for(int j=0; j<b; j++){
                 if(matrix[i][j]==0){
                     for(int k=0; k<l; k++){
-                        temp[k][j]=0;
+                        if(matrix[k][j]!=0)
+                        matrix[k][j]=-1234;
                     }
                     for(int o=0; o<b; o++){
-                        temp[i][o]=0;
+                        if(matrix[i][o]!=0)
+                        matrix[i][o]=-1234;
                     }
                 }
             }
         }
         for(int i=0; i<l; i++)
             for(int j=0; j<b; j++)
-                if(temp[i][j]==0)
+                if(matrix[i][j]==-1234)
                     matrix[i][j]=0;
                 
         
