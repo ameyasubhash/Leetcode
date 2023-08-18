@@ -22,14 +22,26 @@ class Solution {
         // }
         
         // insertion sort
-        for(int i=1; i<n; i++){
-            int j=i-1;
-            int temp= a[i];
-            while(j>=0 && a[j]>temp){
-                a[j+1]=a[j];
-                j--;
+        // for(int i=1; i<n; i++){
+        //     int j=i-1;
+        //     int temp= a[i];
+        //     while(j>=0 && a[j]>temp){
+        //         a[j+1]=a[j];
+        //         j--;
+        //     }
+        //     a[j+1]=temp;
+        // }
+        
+        // selection sort
+        for(int i=0; i<n; i++ ){
+            int min=i;
+            for(int j=i+1; j<n; j++){
+                if(a[j]<a[min])
+                    min=j;
             }
-            a[j+1]=temp;
+            if(min!=i)
+                swap(a, min, i);
         }
+        
     }
 }
