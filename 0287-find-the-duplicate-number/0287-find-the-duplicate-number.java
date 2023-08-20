@@ -20,6 +20,6 @@ class Solution {
             s=nums[s];
             f=nums[f];
         }
-        return s;
+        return f;
     }
 }
