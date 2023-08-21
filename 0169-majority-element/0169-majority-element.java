@@ -1,53 +1,16 @@
 class Solution {
-    public int majorityElement(int[] a) {
-        // brute force
-     //    int n=a.length;
-     //    int curmax, max=0, ele=0;
-     // for(int i=0; i<n; i++){
-     //     curmax=0;
-     //     for(int j=0; j<n; j++){
-     //         if(a[i]==a[j])
-     //             curmax++;
-     //     }
-     //  //   max= Math.max(curmax, max);
-     //     if(curmax>max){
-     //        ele=a[i]; 
-     //        max=curmax; 
-     //     }
-     // }
-     //    return ele;
-        
-        // intermediate
-//         Arrays.sort(a);
-//         int curmax=0, max=0, num=a[0];
-//         for(int i=0; i<a.length-1; i++){
-//             if(a[i]==a[i+1])
-//                 curmax++;
-//             else{
-//                 curmax=0;
-//             }
-//             if(max<curmax){
-//                     num=a[i];
-//                     max=curmax;
-                    
-//                 }
-//         }
-//         return num;
-        
-        // optimised
-        int ansIndex = 0;
-        int count = 1;
-        for(int i=1; i<a.length; i++){
-            if(a[i]==a[ansIndex])
+    public int majorityElement(int[] nums) {
+        int count=1,key=nums[0];
+        for(int i=1; i<nums.length; i++){
+            if(nums[i]==key) 
                 count++;
-            else
+            else 
                 count--;
             if(count==0){
-                ansIndex=i;
+               key=nums[i]; 
                 count=1;
-            }
+            }  
         }
-        return a[ansIndex];
-    
+        return key;
     }
 }
