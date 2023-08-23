@@ -30,8 +30,8 @@ class Solution {
         HashMap <Integer, Integer> map = new HashMap<>();
         Stack <Integer> s = new Stack<>();
         
-        for(int num : nums2){
-            while(!s.isEmpty() && s.peek() < num)
+        for(int num: nums2){
+            while(!s.isEmpty() && s.peek()<num)
                 map.put(s.pop(), num);
             s.push(num);
         }
