@@ -14,45 +14,12 @@
  * }
  */
 class Solution {
-   ArrayList<Integer> list=new ArrayList<>();
+     ArrayList <Integer> list = new ArrayList<>();
     public List<Integer> postorderTraversal(TreeNode root) {
-       
         if(root==null) return list;
-        if(root.left!=null) postorderTraversal(root.left);
-        if(root.right!=null) postorderTraversal(root.right);
+        postorderTraversal(root.left);
+        postorderTraversal(root.right);
         list.add(root.val);
         return list;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//          if(root==null) return list;
-//         if(root.left!=null) postorderTraversal(root.left);
-//         if(root.right!=null) postorderTraversal(root.right);
-//          list.add(root.val);
-//         return list;
-       
