@@ -10,8 +10,8 @@ class Solution {
                 else
                     row.add(pre.get(j-1)+pre.get(j));
             }
-                pre=row;
-                res.add(row);
+            pre=row;
+            res.add(row);
         }
         return res;
     }
